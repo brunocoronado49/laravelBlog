@@ -9,12 +9,9 @@
         <div class="col-12 col-md-7 text-center">
             <h1>POO con Javascript, feo pero posible</h1>
             <hr>
-            <img src="images/0.jpg" alt="Post Javascript" class="img-fluid">
-
-            <p class="text-left mt-3 post-txt">
-                <span>Autor: YouDevs</span>
-                <span class="float-right">Publicado: Hace 2 semanas</span>
-            </p>
+            <img src="images/0.jpg" alt="Post Javascript" class="img-fluid rounded">
+            <br> 
+            <br>
             <p class="text-left">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Eaque nemo accusantium libero hic repellat corporis assumenda
