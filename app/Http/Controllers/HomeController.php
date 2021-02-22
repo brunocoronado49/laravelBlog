@@ -36,8 +36,14 @@ class HomeController extends Controller
         ]);
     }
 
-    public function post() {
-        return view('post');
+    public function post($postId) {
+        $posts = Post::all();
+        $mainPost = Post::where('id', '=', $postId)->get();
+        return view('post', [
+            'postId' => $postId,
+            'mainPost' => $mainPost,
+            'posts' => $posts,
+        ]);
     }
 
     public function postsByCategory($category) {

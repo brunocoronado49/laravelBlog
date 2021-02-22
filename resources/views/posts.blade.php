@@ -33,7 +33,7 @@
                             <div class="d-card-text">
                                {{$post->content}}
                             </div>
-                            <a href="#" class="post-link"><b>Leer más</b></a>
+                            <a href="{{route('post', $post->id)}}" class="post-link"><b>Leer más</b></a>
                             <hr>
                             <div class="row">
                                 <div class="col-6 text-left">
