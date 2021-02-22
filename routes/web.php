@@ -20,7 +20,7 @@ use App\Http\Controllers\Admin\PostsController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
-
+Route::get('/posts/{category}', [HomeController::class, 'postsByCategory'])->name('posts.category');
 Route::get('/post', [HomeController::class, 'post'])->name('post');
 
 Route::get('/home', function() {

@@ -39,4 +39,16 @@ class HomeController extends Controller
     public function post() {
         return view('post');
     }
+
+    public function postsByCategory($category) {
+        $categories = Category::all();
+        $category = Category::where('name', '=', $category)->first();
+        $categorySelected = $category->id;
+        $posts = Post::where('category_id', '=', $categorySelected)->get();
+        return view('posts', [
+            'categories' => $categories,
+            'posts' => $posts,
+            'categorySelected' => $categorySelected
+        ]);
+    }
 }
