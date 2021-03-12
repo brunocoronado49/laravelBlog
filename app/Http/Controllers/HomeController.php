@@ -37,12 +37,11 @@ class HomeController extends Controller
     }
 
     public function post($postId) {
-        $posts = Post::all();
-        $mainPost = Post::where('id', '=', $postId)->get();
+        $lastPosts = Post::orderBy('id', 'desc')->take(3)->get();
+        $post = Post::find($postId);
         return view('post', [
-            'postId' => $postId,
-            'mainPost' => $mainPost,
-            'posts' => $posts,
+            'post' => $post,
+            'lastPosts' => $lastPosts
         ]);
     }
 

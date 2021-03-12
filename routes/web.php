@@ -3,9 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
-
 use App\Http\Controllers\Admin\CategoriesController;
-
 use App\Http\Controllers\Admin\PostsController;
 
 /*
@@ -19,10 +17,12 @@ use App\Http\Controllers\Admin\PostsController;
 |
 */
 
+// ROutes for unauthenticated, default
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/posts/{category}', [HomeController::class, 'postsByCategory'])->name('posts.category');
 Route::get('/post/{postId}', [HomeController::class, 'post'])->name('post');
 
+// Route for home of admin
 Route::get('/home', function() {
     return view('home');
 })->middleware('auth');
